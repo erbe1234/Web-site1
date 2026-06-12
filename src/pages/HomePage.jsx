@@ -37,7 +37,7 @@ const HomePage = () => {
         <title>ETB - Erline Beutcha Toumi | IT Professional</title>
         <meta
           name="description"
-          content="Erline Beutcha Toumi - IT professional passionate about creating innovative digital solutions. Explore my portfolio, skills, and services."
+          content="Erline Beutcha Toumi - I turn ideas into meaningful digital experiences, blending creativity, precision, and purpose. Explore my portfolio, skills, and services."
         />
       </Helmet>
 

@@ -12,7 +12,7 @@ const translations = {
       greeting: 'Hi, I am',
       name: 'Erline Beutcha Toumi',
       tagline: 'BElieve in YOUrselve',
-      description: 'IT professional passionate about creating innovative digital solutions that transform businesses and empower users.',
+      description: 'I turn ideas into meaningful digital experiences, blending creativity, precision, and purpose.',
       cta: 'Contact me'
     },
     about: {
