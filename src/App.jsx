@@ -9,6 +9,7 @@ import AboutPage from '@/pages/AboutPage.jsx';
 import SkillsPage from '@/pages/SkillsPage.jsx';
 import PortfolioPage from '@/pages/PortfolioPage.jsx';
 import ContactPage from '@/pages/ContactPage.jsx';
+import ProjectDetailPage from '@/pages/ProjectDetailPage.jsx';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/portfolio/:slug" element={<ProjectDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={
             <div className="min-h-screen flex items-center justify-center bg-background">

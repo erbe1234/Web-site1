@@ -9,6 +9,9 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext.jsx';
 
+const CONTACT_EMAIL = 'beutchatoumi@gmail.com';
+const WHATSAPP_NUMBER = '491781980607';
+
 const ContactForm = () => {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -58,22 +61,33 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      const submission = {
-        ...formData,
-        timestamp: new Date().toISOString()
-      };
-      
-      const existingSubmissions = JSON.parse(localStorage.getItem('etb-contact-submissions') || '[]');
-      existingSubmissions.push(submission);
-      localStorage.setItem('etb-contact-submissions', JSON.stringify(existingSubmissions));
-      
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast.success(t('contact.form.success'));
+      const body = new FormData();
+      body.append('name', formData.name);
+      body.append('email', formData.email);
+      body.append('subject', formData.subject);
+      body.append('message', formData.message);
+
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        body,
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Message not sent.');
+      }
+
+      toast.success(result.message || t('contact.form.success'));
       setFormData({ name: '', email: '', subject: '', message: '' });
       setErrors({});
     } catch (error) {
-      toast.error(t('contact.form.error'));
+      const emailSubject = encodeURIComponent(formData.subject);
+      const emailBody = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+      toast.info('Votre application mail va s ouvrir. Cliquez sur Envoyer pour transmettre le message.');
     } finally {
       setIsSubmitting(false);
     }
@@ -88,8 +102,13 @@ const ContactForm = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent('Hello! I would like to discuss a project with you.');
-    window.open(`https://wa.me/?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      formData.message.trim()
+        ? `Hello, my name is ${formData.name || 'a visitor'}.\nSubject: ${formData.subject || 'Project discussion'}\n\n${formData.message}`
+        : 'Hello! I would like to discuss a project with you.'
+    );
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   return (

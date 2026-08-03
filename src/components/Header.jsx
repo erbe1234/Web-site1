@@ -58,8 +58,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center relative shadow-[0_0_15px_rgba(0,217,255,0.3)] group-hover:shadow-[0_0_25px_rgba(124,58,237,0.5)] transition-all duration-300">
-              <span className="text-white font-bold text-sm">ETB</span>
+            <div className="w-12 h-12 rounded-xl bg-white/95 p-1.5 flex items-center justify-center relative shadow-[0_0_18px_rgba(0,217,255,0.28)] group-hover:shadow-[0_0_28px_rgba(124,58,237,0.5)] transition-all duration-300">
+              <img
+                src="/brand/etb-logo.jpeg"
+                alt="ETB logo"
+                className="h-full w-full rounded-lg object-contain"
+              />
               <div className="absolute inset-0 rounded-xl border border-white/30 group-hover:border-white/60 transition-colors"></div>
             </div>
             <span className="text-xl font-bold text-white hidden sm:block tracking-wide">Erline Toumi</span>

@@ -16,15 +16,20 @@ const SkillsPage = () => {
     { name: 'React & Next.js', category: t('skills.categories.frontend'), level: 92 },
     { name: 'TypeScript', category: t('skills.categories.frontend'), level: 87 },
     { name: 'Tailwind CSS', category: t('skills.categories.frontend'), level: 94 },
+    { name: 'HTML5 & Semantic Web', category: t('skills.categories.frontend'), level: 95 },
     { name: 'Node.js & Express', category: t('skills.categories.backend'), level: 89 },
+    { name: 'JSON & Node.js Workflows', category: t('skills.categories.backend'), level: 88 },
+    { name: 'Java Programming', category: t('skills.categories.backend'), level: 84 },
     { name: 'Python & Django', category: t('skills.categories.backend'), level: 83 },
+    { name: 'Python Automation & Scripting', category: t('skills.categories.backend'), level: 86 },
     { name: 'REST & GraphQL APIs', category: t('skills.categories.backend'), level: 91 },
     { name: 'AWS & Azure', category: t('skills.categories.devops'), level: 86 },
+    { name: 'Hostinger Hosting & Deployment', category: t('skills.categories.devops'), level: 87 },
     { name: 'Docker & Kubernetes', category: t('skills.categories.devops'), level: 81 },
     { name: 'CI/CD Pipelines', category: t('skills.categories.devops'), level: 88 },
     { name: 'PostgreSQL & MongoDB', category: t('skills.categories.database'), level: 90 },
     { name: 'Redis & Elasticsearch', category: t('skills.categories.database'), level: 79 },
-    { name: 'Git & GitHub', category: t('skills.categories.tools'), level: 95 }
+    { name: 'Git & GitHub Version Control', category: t('skills.categories.tools'), level: 95 }
   ];
 
   const services = [

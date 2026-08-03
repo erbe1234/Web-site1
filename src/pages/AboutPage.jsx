@@ -53,14 +53,75 @@ const AboutPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1670299745460-50e87692474b"
-                    alt="Erline Beutcha Toumi - Young Black African woman with tech-focused professional appearance, IT student portrait"
-                    className="w-full h-auto"
+                <motion.div
+                  className="relative rounded-2xl overflow-hidden shadow-xl group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                  style={{ perspective: 1200 }}
+                >
+                  <motion.div
+                    className="relative"
+                    animate={{
+                      scale: [1.08, 1.15, 1.08, 1.15, 1.08],
+                      x: [0, -18, 0, 18, 0],
+                      y: [0, -8, -3, -8, 0],
+                      rotateY: [0, 10, 0, -10, 0],
+                      rotateX: [0, 3, 0, 3, 0],
+                    }}
+                    transition={{
+                      duration: 18,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <img
+                      src="https://www.rokform.com/cdn/shop/articles/best-apps-for-student-productivity_a62407fb-87f8-4e76-8cd8-358e67585e93-4045550.webp?v=1775837088&width=1500"
+                      alt="Student IT workspace with a laptop, tablet, notebooks, planner and pens on a desk"
+                      className="w-full h-full object-cover"
+                    />
+                    <motion.div
+                      className="absolute right-[4%] top-[17%] hidden w-[31%] rounded-md border border-cyan-300/30 bg-[#06111f]/95 p-2 shadow-[0_0_22px_rgba(0,217,255,0.45)] sm:block"
+                      animate={{ opacity: [0.82, 1, 0.82] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                      style={{
+                        transform: 'rotate(-2deg) skewX(-3deg)',
+                        transformOrigin: 'center',
+                      }}
+                    >
+                      <div className="mb-1 flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-red-400"></span>
+                        <span className="h-1.5 w-1.5 rounded-full bg-yellow-300"></span>
+                        <span className="h-1.5 w-1.5 rounded-full bg-green-400"></span>
+                      </div>
+                      <pre className="overflow-hidden whitespace-pre-wrap font-mono text-[7px] leading-tight text-cyan-100 md:text-[9px]">
+{`const dream = 'IT';
+const student = {
+  focused: true,
+  creative: true,
+};
+
+function buildFuture() {
+  return dream + ' career';
+}`}
+                      </pre>
+                    </motion.div>
+                  </motion.div>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-[#001F3F]/45 via-transparent to-primary/10"
+                    animate={{ opacity: [0.55, 0.35, 0.55, 0.35, 0.55] }}
+                    transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#001F3F]/40 to-transparent"></div>
-                </div>
+                  <motion.div
+                    className="absolute inset-y-0 w-1/2 bg-white/20 blur-3xl"
+                    animate={{
+                      left: ['-45%', '15%', '95%', '15%', '-45%'],
+                      opacity: [0.1, 0.22, 0.1, 0.22, 0.1],
+                    }}
+                    transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+                  />
+                  <div className="absolute inset-0 ring-1 ring-white/10 rounded-2xl pointer-events-none"></div>
+                </motion.div>
               </motion.div>
 
               <motion.div
@@ -102,14 +163,14 @@ const AboutPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 md:p-12 mb-20 relative overflow-hidden"
+              className="bg-gradient-to-br from-[#001F3F] to-[#0a1628] rounded-2xl p-8 md:p-12 mb-20 relative overflow-hidden"
             >
-              <Quote className="absolute top-6 right-6 w-16 h-16 text-primary/20" />
+              <Quote className="absolute top-6 right-6 w-16 h-16 text-white/20" />
               <blockquote className="relative z-10">
-                <p className="text-xl md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                <p className="text-xl md:text-2xl font-bold italic text-white leading-relaxed mb-4">
                   {t('about.quote')}
                 </p>
-                <footer className="text-muted-foreground font-medium">
+                <footer className="text-white/80 font-bold italic">
                   — Erline Beutcha Toumi
                 </footer>
               </blockquote>

@@ -22,7 +22,7 @@ const ContactPage = () => {
       icon: Phone,
       label: 'Phone',
       value: '01781980607',
-      href: 'tel:+21601781980607'
+      href: 'tel:+491781980607'
     },
     {
       icon: MapPin,

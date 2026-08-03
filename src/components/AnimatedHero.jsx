@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import FloatingParticles from '@/components/FloatingParticles.jsx';
@@ -49,6 +49,15 @@ const AnimatedHero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/brand/hero-bg.jpg')",
+          opacity: 0.25
+        }}
+      />
+      
       {/* Animated Gradient Background */}
       <div 
         className="absolute inset-0 bg-[linear-gradient(45deg,hsl(var(--background))_0%,rgba(0,217,255,0.08)_50%,rgba(124,58,237,0.08)_100%)] animate-gradient-shift"
@@ -68,27 +77,13 @@ const AnimatedHero = () => {
           animate="visible"
           className="flex flex-col items-center text-center"
         >
-          {/* Animated Logo / Monogram */}
-          <motion.div 
-            variants={itemVariants}
-            className="mb-8 relative group"
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-destructive rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 animate-glow" />
-            <div className="relative w-24 h-24 glass-card rounded-2xl flex items-center justify-center border border-white/10">
-              <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60">
-                &lt;/&gt;
-              </span>
-            </div>
-          </motion.div>
-
           {/* Greeting */}
           <motion.p variants={itemVariants} className="text-xl text-primary font-medium tracking-wide uppercase mb-4">
             {t('hero.greeting')}
           </motion.p>
 
           {/* Staggered 'ETB' Reveal */}
-          <div className="flex justify-center overflow-hidden mb-6">
+          <div className="flex justify-center items-center gap-4 overflow-hidden mb-6">
             {etbLetters.map((letter, i) => (
               <motion.span
                 key={i}
@@ -99,6 +94,7 @@ const AnimatedHero = () => {
                 {letter}
               </motion.span>
             ))}
+            <Cpu className="w-12 h-12 text-white/90" />
           </div>
           
           <motion.h2 
@@ -113,8 +109,8 @@ const AnimatedHero = () => {
           </motion.h2>
 
           {/* Typed Subtitle effect */}
-          <motion.div variants={itemVariants} className="max-w-2xl mx-auto mb-12">
-            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
+          <motion.div variants={itemVariants} className="max-w-3xl mx-auto mb-12">
+            <p className="text-xl md:text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-accent leading-relaxed font-semibold tracking-tight drop-shadow-lg">
               {t('hero.description')}
             </p>
           </motion.div>

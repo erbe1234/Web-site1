@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, MonitorPlay } from 'lucide-react';
+import { ExternalLink, MonitorPlay, Code2, Database, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext.jsx';
@@ -11,20 +11,49 @@ const FeaturedProjects = () => {
 
   const projects = [
     {
-      title: 'E-commerce Evolution',
-      description: 'A high-performance full-stack marketplace with real-time inventory, secure payment processing, and dynamic analytics.',
-      tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+      slug: 'webapps',
+      title: t('portfolio.projects.webapps.title'),
+      description: t('portfolio.projects.webapps.description'),
+      tags: ['React', 'Vue.js', 'Node.js', 'MongoDB', 'Responsive'],
       color: 'from-primary to-blue-600',
       icon: <MonitorPlay className="w-6 h-6" />
     },
     {
-      title: 'Cloud Analytics Hub',
-      description: 'Distributed dashboard for monitoring server metrics across multiple cloud providers with predictive scaling alerts.',
-      tags: ['Next.js', 'AWS', 'Python', 'GraphQL'],
+      slug: 'websites',
+      title: t('portfolio.projects.websites.title'),
+      description: t('portfolio.projects.websites.description'),
+      tags: ['HTML/CSS', 'JavaScript', 'SEO', 'Performance', 'Design'],
       color: 'from-accent to-purple-800',
+      icon: <MonitorPlay className="w-6 h-6" />
+    },
+    {
+      slug: 'game2048',
+      title: t('portfolio.projects.game2048.title'),
+      description: t('portfolio.projects.game2048.description'),
+      tags: ['Java', 'Game Dev', 'Swing/JavaFX', 'Interactive'],
+      color: 'from-green-500 to-emerald-700',
+      icon: <MonitorPlay className="w-6 h-6" />
+    },
+    {
+      slug: 'pingpong',
+      title: t('portfolio.projects.pingpong.title'),
+      description: t('portfolio.projects.pingpong.description'),
+      tags: ['JavaScript', 'Game Dev', 'Physics', 'AI'],
+      color: 'from-red-500 to-pink-700',
       icon: <MonitorPlay className="w-6 h-6" />
     }
   ];
+
+  const getTagIcon = (tag) => {
+    const name = tag.toLowerCase();
+    if (name.includes('html')) return <Code2 className="w-3.5 h-3.5 text-[#e34f26]" />;
+    if (name.includes('css')) return <Code2 className="w-3.5 h-3.5 text-[#264de4]" />;
+    if (name.includes('javascript') || name === 'js') return <Code2 className="w-3.5 h-3.5 text-[#f0db4f]" />;
+    if (name.includes('react')) return <Code2 className="w-3.5 h-3.5 text-[#61dafb]" />;
+    if (name.includes('node')) return <Cpu className="w-3.5 h-3.5 text-[#68a063]" />;
+    if (name.includes('mongo')) return <Database className="w-3.5 h-3.5 text-[#4db33d]" />;
+    return <Code2 className="w-3.5 h-3.5 text-white/70" />;
+  };
 
   return (
     <section id="featured-projects" className="py-24 relative overflow-hidden bg-background">
@@ -82,22 +111,30 @@ const FeaturedProjects = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-white/80">
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags.map((tag, i) => {
+                    const icon = getTagIcon(tag);
+                    return (
+                      <motion.span
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        className="flex items-center gap-2 px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-white/80"
+                      >
+                        {icon}
+                        <span>{tag}</span>
+                      </motion.span>
+                    );
+                  })}
                 </div>
                 
                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-white/10">
-                  <Button size="sm" className="bg-white/10 hover:bg-white/20 text-white border-0 rounded-full">
-                    <Github className="w-4 h-4 mr-2" />
-                    Source
-                  </Button>
-                  <Button size="sm" className="bg-primary/20 hover:bg-primary/30 text-primary border-0 rounded-full">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </Button>
+                  <Link to={`/portfolio/${project.slug}`}>
+                    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+                      <Button size="sm" className="bg-white/10 hover:bg-white/20 text-white border-0 rounded-full transition-transform duration-300">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        {t('portfolio.viewProject')}
+                      </Button>
+                    </motion.div>
+                  </Link>
                 </div>
               </div>
             </motion.div>

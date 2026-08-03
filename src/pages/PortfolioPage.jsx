@@ -9,31 +9,44 @@ import { useLanguage } from '@/contexts/LanguageContext.jsx';
 
 const PortfolioPage = () => {
   const { t } = useLanguage();
+  const repositoryUrl = 'https://github.com/erbe1234/Web-site1';
 
   const projects = [
     {
-      title: t('portfolio.projects.ecommerce.title'),
-      description: t('portfolio.projects.ecommerce.description'),
+      title: t('portfolio.projects.webapps.title'),
+      description: t('portfolio.projects.webapps.description'),
       image: null,
-      link: '#'
+      link: repositoryUrl
     },
     {
-      title: t('portfolio.projects.dashboard.title'),
-      description: t('portfolio.projects.dashboard.description'),
+      title: t('portfolio.projects.websites.title'),
+      description: t('portfolio.projects.websites.description'),
       image: null,
-      link: '#'
+      link: repositoryUrl
     },
     {
-      title: t('portfolio.projects.mobile.title'),
-      description: t('portfolio.projects.mobile.description'),
+      title: t('portfolio.projects.game2048.title'),
+      description: t('portfolio.projects.game2048.description'),
       image: null,
-      link: '#'
+      link: repositoryUrl
     },
     {
-      title: t('portfolio.projects.api.title'),
-      description: t('portfolio.projects.api.description'),
+      title: t('portfolio.projects.viergwinn.title'),
+      description: t('portfolio.projects.viergwinn.description'),
       image: null,
-      link: '#'
+      link: repositoryUrl
+    },
+    {
+      title: t('portfolio.projects.game90grad.title'),
+      description: t('portfolio.projects.game90grad.description'),
+      image: null,
+      link: repositoryUrl
+    },
+    {
+      title: t('portfolio.projects.pingpong.title'),
+      description: t('portfolio.projects.pingpong.description'),
+      image: null,
+      link: repositoryUrl
     }
   ];
 

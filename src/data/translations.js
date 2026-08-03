@@ -12,13 +12,13 @@ const translations = {
       greeting: 'Hi, I am',
       name: 'Erline Beutcha Toumi',
       tagline: 'BElieve in YOUrselve',
-      description: 'I turn ideas into meaningful digital experiences, blending creativity, precision, and purpose.',
+      description: 'Erline Beutcha, student in Bachelor of Computer Science at TU Clausthal. Passionate about web development and AI tools.',
       cta: 'Contact me'
     },
     about: {
       title: 'About me',
       subtitle: 'My journey in technology',
-      intro: 'I am Erline Beutcha Toumi, an IT professional dedicated to leveraging technology to solve real-world challenges. My journey in tech has been driven by curiosity, continuous learning, and a commitment to excellence.',
+      intro: 'I am Erline Beutcha Toumi, an IT professional dedicated to leveraging technology to solve real-world challenges. My journey in tech has been driven by curiosity, continuous learning, and a commitment to excellence. Je m\'appelle Erline Beutcha , etudiante en Bachelor Informatik  a  la TU de clausthal.',
       journey: {
         title: 'Professional journey',
         content: 'With years of experience in software development and IT solutions, I have worked on diverse projects ranging from web applications to cloud infrastructure. Each project has taught me valuable lessons about problem-solving, collaboration, and innovation.'
@@ -64,21 +64,29 @@ const translations = {
       subtitle: 'Featured projects',
       viewProject: 'View project',
       projects: {
-        ecommerce: {
-          title: 'E-commerce platform',
-          description: 'Full-stack online store with payment integration and inventory management'
+        webapps: {
+          title: 'Web Applications',
+          description: 'Full-stack web applications with modern frameworks, responsive design, and seamless user experiences'
         },
-        dashboard: {
-          title: 'Analytics dashboard',
-          description: 'Real-time data visualization and reporting system'
+        websites: {
+          title: 'Websites',
+          description: 'Custom-designed websites with optimized performance, SEO-friendly architecture, and engaging interfaces'
         },
-        mobile: {
-          title: 'Mobile application',
-          description: 'Cross-platform mobile app with offline capabilities'
+        game2048: {
+          title: '2048 Game',
+          description: 'Interactive puzzle game built with Java - slide tiles to combine numbers and reach 2048'
         },
-        api: {
-          title: 'REST API service',
-          description: 'Scalable API backend with authentication and rate limiting'
+        viergwinn: {
+          title: 'Vier Gewinn',
+          description: 'Connect Four strategy game built in Java - challenge AI or play multiplayer with intelligent algorithms'
+        },
+        game90grad: {
+          title: '90 Grad',
+          description: 'Rotation-based puzzle game developed in Java with increasing difficulty and engaging mechanics'
+        },
+        pingpong: {
+          title: 'Ping Pong',
+          description: 'Classic arcade-style game with smooth gameplay, score tracking, and AI opponent'
         }
       }
     },
@@ -169,21 +177,29 @@ const translations = {
       subtitle: 'Projets en vedette',
       viewProject: 'Voir le projet',
       projects: {
-        ecommerce: {
-          title: 'Plateforme e-commerce',
-          description: 'Boutique en ligne complète avec intégration de paiement et gestion des stocks'
+        webapps: {
+          title: 'Applications Web',
+          description: 'Applications web full-stack avec frameworks modernes, design responsive et expériences utilisateur fluides'
         },
-        dashboard: {
-          title: 'Tableau de bord analytique',
-          description: 'Système de visualisation de données et de reporting en temps réel'
+        websites: {
+          title: 'Sites Web',
+          description: 'Sites web personnalisés avec performance optimisée, architecture SEO-friendly et interfaces attrayantes'
         },
-        mobile: {
-          title: 'Application mobile',
-          description: 'Application mobile multiplateforme avec capacités hors ligne'
+        game2048: {
+          title: 'Jeu 2048',
+          description: 'Jeu de puzzle interactif construit avec Java - fusionnez les chiffres pour atteindre 2048'
         },
-        api: {
-          title: 'Service API REST',
-          description: 'Backend API évolutif avec authentification et limitation de débit'
+        viergwinn: {
+          title: 'Vier Gewinn',
+          description: 'Jeu de stratégie Puissance 4 développé en Java - affrontez l\'IA ou jouez en multijoueur avec des algorithmes intelligents'
+        },
+        game90grad: {
+          title: '90 Grad',
+          description: 'Jeu de puzzle basé sur la rotation développé en Java avec difficulté progressive et mécaniques engageantes'
+        },
+        pingpong: {
+          title: 'Ping Pong',
+          description: 'Jeu d\'arcade classique avec gameplay fluide, suivi des scores et adversaire IA'
         }
       }
     },
@@ -274,21 +290,29 @@ const translations = {
       subtitle: 'Ausgewählte Projekte',
       viewProject: 'Projekt ansehen',
       projects: {
-        ecommerce: {
-          title: 'E-Commerce-Plattform',
-          description: 'Full-Stack-Online-Shop mit Zahlungsintegration und Bestandsverwaltung'
+        webapps: {
+          title: 'Webanwendungen',
+          description: 'Full-Stack-Webanwendungen mit modernen Frameworks, responsivem Design und nahtlosen Benutzererfahrungen'
         },
-        dashboard: {
-          title: 'Analytics-Dashboard',
-          description: 'Echtzeit-Datenvisualisierung und Berichtssystem'
+        websites: {
+          title: 'Websites',
+          description: 'Maßgeschneiderte Websites mit optimierter Leistung, SEO-freundlicher Architektur und ansprechenden Schnittstellen'
         },
-        mobile: {
-          title: 'Mobile Anwendung',
-          description: 'Plattformübergreifende mobile App mit Offline-Funktionen'
+        game2048: {
+          title: '2048 Spiel',
+          description: 'Interaktives Puzzlespiel mit Java - verschieben Sie Kacheln, um Zahlen zu kombinieren und 2048 zu erreichen'
         },
-        api: {
-          title: 'REST-API-Service',
-          description: 'Skalierbares API-Backend mit Authentifizierung und Rate-Limiting'
+        viergwinn: {
+          title: 'Vier Gewinn',
+          description: 'Strategiespiel Vier Gewinnt in Java entwickelt - treten Sie gegen KI an oder spielen Sie im Mehrspielermodus mit intelligenten Algorithmen'
+        },
+        game90grad: {
+          title: '90 Grad',
+          description: 'Rotationsbasiertes Puzzlespiel in Java entwickelt mit steigender Schwierigkeit und fesselnden Mechaniken'
+        },
+        pingpong: {
+          title: 'Ping Pong',
+          description: 'Klassisches Arcade-Spiel mit flüssiger Spielweise, Punktverfolgung und KI-Gegner'
         }
       }
     },

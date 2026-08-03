@@ -1,0 +1,6 @@
+REMINDER SOUND PLACEHOLDER
+-- Replace this file with a real MP3 for nicer reminders --
+REMINDER MP3 PLACEHOLDER
+This file is a placeholder. Replace with a real MP3 file named reminder.mp3
+in the same location (assets/sounds/reminder.mp3). The app will fall back to Web Audio API
+if the audio file is missing or fails to play.

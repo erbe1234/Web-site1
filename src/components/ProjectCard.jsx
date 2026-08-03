@@ -3,8 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectCard = ({ title, description, image, link, index = 0 }) => {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -33,7 +35,15 @@ const ProjectCard = ({ title, description, image, link, index = 0 }) => {
           variant="outline"
           size="sm"
           className="group/btn transition-all duration-200"
-          onClick={() => link && window.open(link, '_blank')}
+          onClick={() => {
+            if (!link) return;
+            // If link is an internal route, use react-router navigation
+            if (typeof link === 'string' && link.startsWith('/')) {
+              navigate(link);
+            } else {
+              window.open(link, '_blank', 'noopener,noreferrer');
+            }
+          }}
         >
           <span>View project</span>
           <ExternalLink className="w-4 h-4 ml-2 transition-transform duration-200 group-hover/btn:translate-x-1" />
